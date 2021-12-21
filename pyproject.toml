@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "mac_format"
-version = "0.1.0"
+name = "mac_formater"
+version = "0.1.1"
 description = ""
 authors = ["Lucas <lucasbmello96@gmail.com>"]
 
@@ -9,6 +9,7 @@ python = "^3.9"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+pygubu-designer = "^0.19"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

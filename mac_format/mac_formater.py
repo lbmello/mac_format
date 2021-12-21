@@ -1,24 +1,60 @@
 
+# TODO: Translate the string format methods.
+# TODO: Add the documentation to the string format methods.
+
 
 class MacFormater:
 
     def __init__(self, mac_address_input):
-        self.mac = self.mac_filter(mac_address_input)
+        self.mac_inputed = mac_address_input
+        self.mac = self.mac_filter()
 
 
-    def mac_filter(self, mac_address):
+    def mac_filter(self):
+        """Remove some possible delimiters."""
+
         patterns = ['-', '_', 
                     '.', ' ', 
                     ',', ':',
                     '_', ' ']
 
-        mac_filtered = mac_address
+        mac_filtered = self.mac_inputed
 
         for pattern in patterns:
             mac_filtered = mac_filtered.replace(pattern, '')
 
         return mac_filtered
+
+
+    def mac_generator(self):
+        """Run all formating methods and return a list."""
+
+        mac_list = [
+            self.dois_pontos_M(),
+            self.dois_pontos_m(),
+            self.traco_M(),
+            self.traco_m(),
+            self.ponto_M(),
+            self.ponto_m(),
+            self.virgula_M(),
+            self.virgula_m(),
+            self.espaco_M(),
+            self.espaco_m(),
+            self.nada_M(),
+            self.nada_m()
+        ]
+
+        return mac_list
+
         
+    def print_all(self):
+        """Simply run mac_generator and print all the results."""
+
+        macs = self.mac_generator()
+
+        for mac in macs:
+            print(mac)
+
 
     def dois_pontos_M(self):
         formated_mac = ''
@@ -145,17 +181,3 @@ class MacFormater:
 
         return f"| N | | M | : {local_mac}"
 
-
-    def print_all(self):
-        print(self.dois_pontos_M())
-        print(self.dois_pontos_m())
-        print(self.traco_M())
-        print(self.traco_m())
-        print(self.ponto_M())
-        print(self.ponto_m())
-        print(self.virgula_M())
-        print(self.virgula_m())
-        print(self.espaco_M())
-        print(self.espaco_m())
-        print(self.nada_M())
-        print(self.nada_m())
