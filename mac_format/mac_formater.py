@@ -2,6 +2,8 @@
 # TODO: Translate the string format methods.
 # TODO: Add the documentation to the string format methods.
 
+from urllib.parse import urljoin
+import requests
 
 class MacFormater:
 
@@ -13,8 +15,8 @@ class MacFormater:
     def mac_filter(self):
         """Remove some possible delimiters."""
 
-        patterns = ['-', '_', 
-                    '.', ' ', 
+        patterns = ['-', '_',
+                    '.', ' ',
                     ',', ':',
                     '_', ' ']
 
@@ -46,7 +48,22 @@ class MacFormater:
 
         return mac_list
 
-        
+
+    def mac_vendor(self):
+        """Check the mac vendor."""
+
+        base_url = "https://api.macvendors.com/"
+        final_url = urljoin(base_url, f"/{self.mac}/")
+
+        try:
+            response = requests.get(final_url)
+
+            if response.status_code == 200:
+                return f"Vendor: {response.text}"
+        except:
+            return "Mac Vendor not available!"
+
+
     def print_all(self):
         """Simply run mac_generator and print all the results."""
 
@@ -55,6 +72,8 @@ class MacFormater:
         for mac in macs:
             print(mac)
 
+        print('')
+        print(self.mac_vendor())
 
     def dois_pontos_M(self):
         formated_mac = ''
@@ -180,4 +199,3 @@ class MacFormater:
         local_mac = self.mac.lower()
 
         return f"| N | | M | : {local_mac}"
-
