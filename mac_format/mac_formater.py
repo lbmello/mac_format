@@ -33,7 +33,7 @@ class MacFormater:
                 print(f"| {key} |: {value}")
 
         print('------------------------------')
-        print(f"The vendor of {self.mac} is: {self.mac_vendor()}")
+        print(f"The {self.mac}'s vendor is: {self.mac_vendor()}")
         
 
     def mac_raw_filter(self):
