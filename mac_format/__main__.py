@@ -12,6 +12,6 @@ if __name__ == "__main__":
         MacFormater(mac_address_input = mac_arg)  
     
     else:
-        mac_input = input("Digite o endereço MAC: ")
+        mac_input = input("Type the MAC address: ")
 
         MacFormater(mac_address_input = mac_input)
