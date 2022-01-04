@@ -1,8 +1,11 @@
 [tool.poetry]
 name = "mac_format"
-version = "0.1.1"
+version = "0.2.1"
 description = ""
 authors = ["Lucas <lucasbmello96@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/lbmello/mac_format/"
+homepage = "https://github.com/lbmello/mac_format/"
 
 [tool.poetry.dependencies]
 python = "^3.9"
