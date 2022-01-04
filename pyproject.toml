@@ -1,11 +1,12 @@
 [tool.poetry]
-name = "mac_formater"
+name = "mac_format"
 version = "0.1.1"
 description = ""
 authors = ["Lucas <lucasbmello96@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+requests = "^2.27.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
