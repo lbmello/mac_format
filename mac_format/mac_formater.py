@@ -53,27 +53,26 @@ class MacFormater:
         macs = list()
 
         for d in delimiter:       
-            formated_mac = ''
+            formated_upper = ''
+            formater_lower = ''
 
             upper_mac = self.mac.upper()
-            for letter in range(0, len(self.mac), 2):
-                formated_mac = formated_mac + (upper_mac[letter] + upper_mac[letter+1] + d)
-
-            macs.append(
-                {
-                    f"{d} | M": f"{formated_mac[0:-1]}"
-                })
-
-            formated_mac = ''
             lower_mac = self.mac.lower()
+
             for letter in range(0, len(self.mac), 2):
-                formated_mac = formated_mac + (lower_mac[letter] + lower_mac[letter+1] + d)
-                
+                formated_upper = formated_upper + (upper_mac[letter] + upper_mac[letter+1] + d)
+                formater_lower = formater_lower + (lower_mac[letter] + lower_mac[letter+1] + d)
+
             macs.append(
                 {
-                    f"{d} | m": f"{formated_mac[0:-1]}"
+                    f"{d} | M": f"{formated_upper[0:-1]}"
                 })
-        
+
+            macs.append(
+                {
+                    f"{d} | m": f"{formater_lower[0:-1]}"
+                })             
+
         return macs
 
 
