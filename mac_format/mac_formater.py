@@ -25,9 +25,21 @@ class MacFormater:
         ]
 
         self.final_macs = self.format_final_macs(self.final_delimiters)
+
+
+    def return_exit(self):
+        exit = str()
+
+        for mac in self.final_macs:
+            for key, value in mac.items():
+                exit += (f" {key} | {value} |")
+
+        exit += (f"vendor {self.mac_vendor()}")
+
+        return exit
         
 
-        # Print the final results
+    def print_exit(self):
         for mac in self.final_macs:
             for key, value in mac.items():
                 print(f"| {key} |: {value}")
@@ -89,4 +101,3 @@ class MacFormater:
                 return response.text
         except:
             return "Mac Vendor not available!"
-
