@@ -1,6 +1,6 @@
 pipeline {
     agent { 
-        label 'docker-agent-general-usage'
+        label 'general-usage'
     }
 
     stages {
