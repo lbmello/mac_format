@@ -18,6 +18,7 @@ pipeline {
 
         stage('Tests') {
             steps {
+                sh source .venv/bin/activate
                 python -m unittest tests/test_mac_format.py
             }
         }
