@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker { image 'python:3.12.0b4-alpine3.18' }
+        docker { 
+            image 'python:3.12.0b4-alpine3.18' 
+            registryUrl 'https://hub.docker.com/'
+        }
     }
 
     stages {
