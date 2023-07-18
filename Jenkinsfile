@@ -1,11 +1,8 @@
 pipeline {
-    agent {
-        node {
-            label 'general-usage && docker-proxy1'
-        }
-    }
+    agent none
 
     stages {
+        agent { label 'general-usage && docker-proxy1' }
         stage('Prepare Environment') {
             steps {
                 sh 'pip3 install unittest requests'
@@ -15,6 +12,7 @@ pipeline {
         }
 
         stage('Tests') {
+            agent { label 'general-usage && docker-proxy1' }
             steps {
                 sh 'source .venv/bin/activate'
                 sh 'python3 -m unittest tests/test_mac_format.py'
