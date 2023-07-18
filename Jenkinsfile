@@ -1,5 +1,9 @@
 pipeline {
-    agent 'general-usage'
+    agent {
+        node {
+            label 'general-usage' && 'docker-proxy1'
+        }
+    }
 
     stages {
         stage('Prepare Environment') {
