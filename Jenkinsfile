@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repo') {
-            steps {
-                sh 'git clone https://github.com/lbmello/mac_format/'
-            }
-        }
-
         stage('Prepare Environment') {
             steps {
                 sh 'pip3 install unittest requests'
