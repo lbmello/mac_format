@@ -18,7 +18,7 @@ pipeline {
 
         stage('Tests') {
             steps {
-                python3 -m unittest tests/test_mac_format.py
+                python -m unittest tests/test_mac_format.py
             }
         }
     }
