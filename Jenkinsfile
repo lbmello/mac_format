@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'general-usage' && 'docker-proxy1'
+            label 'general-usage && docker-proxy1'
         }
     }
 
