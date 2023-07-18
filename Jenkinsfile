@@ -4,10 +4,20 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/lbmello/mac_format/'
+                git clone 'https://github.com/lbmello/mac_format/'
+            }
+        }
+
+        stage('Prepare Environment') {
+            steps {
+                sh pip3 install unittest requests
                 sh python3 -m venv .venv
                 sh source .venv/bin/activate
-                sh pip3 install unittest requests
+            }
+        }
+
+        stage('Tests') {
+            steps {
                 python3 -m unittest tests/test_mac_format.py
             }
         }
