@@ -1,4 +1,7 @@
 pipeline {
+    agent { 
+        label 'docker-agent-general-usage'
+    }
 
     stages {
         stage('Prepare Environment') {
