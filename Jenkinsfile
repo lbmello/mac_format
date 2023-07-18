@@ -1,7 +1,5 @@
 pipeline {
-    agent { 
-        label 'general-usage'
-    }
+    agent 'general-usage'
 
     stages {
         stage('Prepare Environment') {
