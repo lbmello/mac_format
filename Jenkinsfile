@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Prepare Environment') {
             steps {
-                sh 'pip3 install unittest requests'
-                sh 'python3 -m venv .venv'
+                sh 'python -m pip install unittest requests'
+                sh 'python -m venv .venv'
                 sh 'source .venv/bin/activate'
             }
         }
