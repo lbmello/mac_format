@@ -2,8 +2,8 @@ pipeline {
     agent none
 
     stages {
-        agent { label 'general-usage && docker-proxy1' }
         stage('Prepare Environment') {
+            agent { label 'general-usage && docker-proxy1' }
             steps {
                 sh 'pip3 install unittest requests'
                 sh 'python3 -m venv .venv'
