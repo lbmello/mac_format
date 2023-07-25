@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker { 
-            image 'python:3.12.0b4-alpine3.18' 
+            image 'jenkins/jnlp-agent-python' 
             registryUrl 'https://hub.docker.com/'
         }
     }
