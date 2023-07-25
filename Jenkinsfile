@@ -2,7 +2,6 @@ pipeline {
     agent {
         docker { 
             image 'python'
-            registryUrl 'https://hub.docker.com/'
         }
     }
 
