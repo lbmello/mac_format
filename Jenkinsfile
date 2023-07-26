@@ -19,10 +19,10 @@ pipeline {
         stage('Tests') {
             steps {
                 sh """
-                source .venv/bin/activate'
+                source .venv/bin/activate
                 python3 -m unittest tests/test_mac_format.py
             """
             }
         }
     }
-}
+    
