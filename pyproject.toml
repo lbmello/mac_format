@@ -9,7 +9,7 @@ homepage = "https://github.com/lbmello/mac_format/"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-requests = "^2.27.0"
+requests = "^2.30.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
